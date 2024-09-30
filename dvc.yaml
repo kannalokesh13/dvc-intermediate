@@ -1,0 +1,21 @@
+stages:
+  data_loading:
+    cmd: python src/data_loader.py
+    deps:
+    - src/data_loader.py
+    params:
+    - data_source.local_path
+    - split.dir
+    - split.test
+    - split.train
+    outs:
+    - artifacts/data
+  model_trainer:
+    cmd: python src/model_trainer.py
+    deps:
+    - src/model_trainer.py
+    params:
+    - training_info.epochs
+    - training_info.learning_rate
+    outs:
+    - artifacts/model

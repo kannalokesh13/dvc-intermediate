@@ -1,0 +1,37 @@
+data_source:
+  local_path: C:\Users\LokeshKanna\Downloads\imagenet
+
+split:
+  dir : artifacts/data
+  train : train
+  test : test
+
+data_dir:
+  dir : artifacts/data
+  train : train
+  test : test
+
+train:
+  model_dir: artifacts/model
+
+training_info:
+  epochs : 5
+  learning_rate : 0.001
+
+
+
+
+
+
+# dvc stage add -n stage_01  -d pipeline/stage_01.py -d artifacts/text.txt python pipeline/stage_01.py 
+
+# dvc stage add -n stage_02  -d pipeline/stage_02.py -d artifacts/text.txt -o artifacts/output.txt  python pipeline/stage_02.py 
+
+# dvc stage add -n stage_03  -d pipeline/stage_03.py -d artifacts/output.txt python pipeline/stage_03.py
+
+# dvc stage add -n data_loading -p data_source.local_path,split.dir,split.train,split.test -d src/data_loader.py -o artifacts/data python src/data_loader.py
+
+# dvc stage add -n model_trainer -p training_info.epochs,training_info.learning_rate -d src/model_trainer.py -o artifacts/model python src/model_trainer.py
+
+
+

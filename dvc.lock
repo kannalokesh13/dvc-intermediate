@@ -1,0 +1,38 @@
+schema: '2.0'
+stages:
+  data_loading:
+    cmd: python src/data_loader.py
+    deps:
+    - path: src/data_loader.py
+      hash: md5
+      md5: 079cdd594f0c1151191b8020f47aa419
+      size: 1864
+    params:
+      params.yaml:
+        data_source.local_path: C:\Users\LokeshKanna\Downloads\imagenet
+        split.dir: artifacts/data
+        split.test: test
+        split.train: train
+    outs:
+    - path: artifacts/data
+      hash: md5
+      md5: 0d449d57ef9c4fd1ba25f7b374888adf.dir
+      size: 1577973
+      nfiles: 120
+  model_trainer:
+    cmd: python src/model_trainer.py
+    deps:
+    - path: src/model_trainer.py
+      hash: md5
+      md5: f8a3380c5312261980f78cae66d13ac5
+      size: 4367
+    params:
+      params.yaml:
+        training_info.epochs: 5
+        training_info.learning_rate: 0.001
+    outs:
+    - path: artifacts/model
+      hash: md5
+      md5: 159dc7b054ed3bd253359a69c6aa68d3.dir
+      size: 29724962
+      nfiles: 1
