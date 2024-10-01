@@ -20,12 +20,12 @@ stages:
       size: 1577973
       nfiles: 120
   model_trainer:
-    cmd: python src/model_trainer.py
+    cmd: python src/model_trainer_version1.py
     deps:
-    - path: src/model_trainer.py
+    - path: src/model_trainer_version1.py
       hash: md5
-      md5: f8a3380c5312261980f78cae66d13ac5
-      size: 4367
+      md5: ac96e81e9788022b05f0d3b074478c04
+      size: 4583
     params:
       params.yaml:
         training_info.epochs: 5
@@ -33,6 +33,6 @@ stages:
     outs:
     - path: artifacts/model
       hash: md5
-      md5: 159dc7b054ed3bd253359a69c6aa68d3.dir
+      md5: 123aa0c454463916a6de307108ce7516.dir
       size: 29724962
       nfiles: 1

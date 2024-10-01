@@ -31,7 +31,12 @@ training_info:
 
 # dvc stage add -n data_loading -p data_source.local_path,split.dir,split.train,split.test -d src/data_loader.py -o artifacts/data python src/data_loader.py
 
-# dvc stage add -n model_trainer -p training_info.epochs,training_info.learning_rate -d src/model_trainer.py -o artifacts/model python src/model_trainer.py
+# dvc stage add -n model_trainer -p training_info.epochs,training_info.learning_rate -d src/model_trainer_version1.py -o artifacts/model python src/model_trainer_version1.py
+
+# dvc command which also includes the mlruns inside the outputs of artifacts where it tracks the mlruns also
+
+#  dvc stage add -n model_trainer -p training_info.epochs,training_info.learning_rate -d src/model_trainer_version1.py -o artifacts/model -o mlruns python src/model_trainer_version1.py
 
 
-
+# when we try to add the mlruns folder inside the outs section of the dvc.yaml, then it provides on each run at each time and not rpoviding all the runs, so it 
+# is one of the complication.

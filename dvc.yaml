@@ -11,9 +11,9 @@ stages:
     outs:
     - artifacts/data
   model_trainer:
-    cmd: python src/model_trainer.py
+    cmd: python src/model_trainer_version1.py
     deps:
-    - src/model_trainer.py
+    - src/model_trainer_version1.py
     params:
     - training_info.epochs
     - training_info.learning_rate
