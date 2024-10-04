@@ -28,16 +28,16 @@ stages:
       size: 4964
     params:
       params.yaml:
-        training_info.epochs: 2
+        training_info.epochs: 3
         training_info.learning_rate: 0.001
     outs:
     - path: artifacts/model
       hash: md5
-      md5: 19823558208ab89ba9f84773844ca42a.dir
+      md5: ec6973dc64eb711f13075fbc715b66a1.dir
       size: 29724962
       nfiles: 1
     - path: mlruns
       hash: md5
-      md5: 317ab8bdde69f631c839adc5685eb1cf.dir
-      size: 29728814
+      md5: 5151955d7f90f6a702a49d52a28e2bc0.dir
+      size: 29728790
       nfiles: 17

@@ -15,7 +15,7 @@ train:
   model_dir: artifacts/model
 
 training_info:
-  epochs : 2
+  epochs : 3
   learning_rate : 0.001
 
 
