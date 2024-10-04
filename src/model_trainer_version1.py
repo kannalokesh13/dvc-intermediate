@@ -9,6 +9,8 @@ import torch
 import yaml
 import os
 import mlflow
+import subprocess
+import git
 
 
 def data_load(yaml_file_path):
@@ -87,7 +89,11 @@ def model_train(yaml_file_path):
     # # Set the experiment
     # mlflow.set_experiment(experiment_name)
 
+    git_branch = subprocess.check_output(['git', 'rev-parse', '--abbrev-ref', 'HEAD']).strip().decode()
+
     mlflow.start_run()
+
+    mlflow.log_param("git_branch", git_branch)
 
     learning_rate = params_yaml['training_info']['learning_rate']
     epochs = params_yaml['training_info']['epochs']

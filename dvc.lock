@@ -24,20 +24,20 @@ stages:
     deps:
     - path: src/model_trainer_version1.py
       hash: md5
-      md5: f1870f48c024e34436bec293e82cabfc
-      size: 4964
+      md5: 3e34204fc4b00aad83a13dfadf7748c8
+      size: 5152
     params:
       params.yaml:
-        training_info.epochs: 3
-        training_info.learning_rate: 0.001
+        training_info.epochs: 2
+        training_info.learning_rate: 0.002
     outs:
     - path: artifacts/model
       hash: md5
-      md5: ec6973dc64eb711f13075fbc715b66a1.dir
+      md5: 0f72c3ccedccde4797f89822be5425d7.dir
       size: 29724962
       nfiles: 1
     - path: mlruns
       hash: md5
-      md5: 5151955d7f90f6a702a49d52a28e2bc0.dir
-      size: 29728790
-      nfiles: 17
+      md5: b38393a08a329d49ce06e470e7927601.dir
+      size: 29728802
+      nfiles: 18
