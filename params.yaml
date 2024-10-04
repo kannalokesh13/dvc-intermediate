@@ -1,0 +1,54 @@
+data_source:
+  local_path: C:\Users\LokeshKanna\Downloads\imagenet
+
+split:
+  dir : artifacts/data
+  train : train
+  test : test
+
+data_dir:
+  dir : artifacts/data
+  train : train
+  test : test
+
+train:
+  model_dir: artifacts/model
+
+training_info:
+  epochs : 2
+  learning_rate : 0.002
+
+
+
+
+
+
+# dvc stage add -n stage_01  -d pipeline/stage_01.py -d artifacts/text.txt python pipeline/stage_01.py 
+
+# dvc stage add -n stage_02  -d pipeline/stage_02.py -d artifacts/text.txt -o artifacts/output.txt  python pipeline/stage_02.py 
+
+# dvc stage add -n stage_03  -d pipeline/stage_03.py -d artifacts/output.txt python pipeline/stage_03.py
+
+# dvc stage add -n data_loading -p data_source.local_path,split.dir,split.train,split.test -d src/data_loader.py -o artifacts/data python src/data_loader.py
+
+# dvc stage add -n model_trainer -p training_info.epochs,training_info.learning_rate -d src/model_trainer_version1.py -o artifacts/model python src/model_trainer_version1.py
+
+# dvc command which also includes the mlruns inside the outputs of artifacts where it tracks the mlruns also
+
+#  dvc stage add -n model_trainer -p training_info.epochs,training_info.learning_rate -d src/model_trainer_version1.py -o artifacts/model -o mlruns python src/model_trainer_version1.py
+
+
+# when we try to add the mlruns folder inside the outs section of the dvc.yaml, then it provides only each run at each time and not rpoviding all the runs, so it 
+# is one of the complication.
+
+
+
+
+# https://github.com/Oyebamiji-Micheal/End-to-End-Customer-Churn-Prediction-using-MLflow-and-DVC/tree/main
+
+# https://github.com/ai-mayurpatil/DL-Kidney_Disease_Classification/tree/main
+
+# https://data-ai.theodo.com/blog-technique/dvc-pipeline-runs-mlflow
+
+# https://github.com/karndeepsingh/Mlflow-Tutorial/blob/main/MLFlow_Implementation.ipynb
+

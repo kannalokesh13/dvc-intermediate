@@ -1,0 +1,4 @@
+[core]
+    remote = data_base
+['remote "data_base"']
+    url = C:\Users\LokeshKanna\Downloads\dvc_local_database_version2
