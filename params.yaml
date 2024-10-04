@@ -15,7 +15,7 @@ train:
   model_dir: artifacts/model
 
 training_info:
-  epochs : 5
+  epochs : 2
   learning_rate : 0.001
 
 
@@ -38,5 +38,17 @@ training_info:
 #  dvc stage add -n model_trainer -p training_info.epochs,training_info.learning_rate -d src/model_trainer_version1.py -o artifacts/model -o mlruns python src/model_trainer_version1.py
 
 
-# when we try to add the mlruns folder inside the outs section of the dvc.yaml, then it provides on each run at each time and not rpoviding all the runs, so it 
+# when we try to add the mlruns folder inside the outs section of the dvc.yaml, then it provides only each run at each time and not rpoviding all the runs, so it 
 # is one of the complication.
+
+
+
+
+# https://github.com/Oyebamiji-Micheal/End-to-End-Customer-Churn-Prediction-using-MLflow-and-DVC/tree/main
+
+# https://github.com/ai-mayurpatil/DL-Kidney_Disease_Classification/tree/main
+
+# https://data-ai.theodo.com/blog-technique/dvc-pipeline-runs-mlflow
+
+# https://github.com/karndeepsingh/Mlflow-Tutorial/blob/main/MLFlow_Implementation.ipynb
+

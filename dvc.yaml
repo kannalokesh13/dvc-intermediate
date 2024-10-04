@@ -19,3 +19,4 @@ stages:
     - training_info.learning_rate
     outs:
     - artifacts/model
+    - mlruns

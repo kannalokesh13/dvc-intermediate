@@ -76,17 +76,6 @@ def model_train(yaml_file_path):
     with open(yaml_file_path) as yaml_file:
         params_yaml = yaml.safe_load(yaml_file)
 
-    # new_runs_folder = r"C:\Users\LokeshKanna\Downloads\dvc_version1\artifacts"
-
-    # mlflow.set_tracking_uri(f"file:///{new_runs_folder}")
-
-    # experiment_name = "my_experiment"
-    # if not mlflow.get_experiment_by_name(experiment_name):
-    #     mlflow.create_experiment(experiment_name)
-
-    # # Set the experiment
-    # mlflow.set_experiment(experiment_name)
-
     mlflow.start_run()
 
     learning_rate = params_yaml['training_info']['learning_rate']
@@ -137,6 +126,8 @@ def model_train(yaml_file_path):
     n_total = 0
 
     model.eval()
+
+    mlflow.log_param("final_git_commit", !git rev-parse HEAD)
 
     with torch.no_grad():
         for (images, labels) in testloader:
